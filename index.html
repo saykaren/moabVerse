@@ -43,13 +43,13 @@
       <a-entity id="rig">
         <a-camera position="0 1.6 0"></a-camera>
         <a-entity
-          oculus-touch-controls="hand: left; toon; color: #ffcccc"
+          oculus-touch-controls="hand: left; handModelStyle: toon;"
           teleport-controls="type: parabolic; collisionEntities: [mixin='voxel'], #ground"
           intersection-spawn="event: click; mixin: voxel"
         ></a-entity>
         <a-entity
           id="blockHand"
-          oculus-touch-controls="hand: right; highPoly; color: #ffcccc"
+          oculus-touch-controls="hand: right; handModelStyle: toon;"
           oculus-thumbstick-controls
           laser-controls
         ></a-entity>
