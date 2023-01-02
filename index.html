@@ -48,7 +48,6 @@
         <a-camera position="0 1.6 0"></a-camera>
         <a-entity
           oculus-touch-controls="hand: left; handModelStyle: toon; color=blue"
-          src="https://market-assets.fra1.cdn.digitaloceanspaces.com/market-assets/models/sword/model.gltf"
           teleport-controls="type: parabolic; collisionEntities: [mixin='voxel'], #ground"
           intersection-spawn="event: click; mixin: voxel"
         ></a-entity>
@@ -63,6 +62,7 @@
         gltf-model="#hammer"
         position="0 1 -2"
         rotation="1 5 15"
+        animation="property: object3D.position.y; to: 1.2; dir: alternate; dur:2000; loop: true;"
       ></a-entity>
       <a-entity gltf-model="#dog" position="6 -2 -4" rotation="4 0 0"/>
     </a-scene>
