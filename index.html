@@ -32,6 +32,7 @@
       gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/v1/decoders/;
     meshoptDecoderPath: https://unpkg.com/meshoptimizer@0.16.0/meshopt_decoder.js;"
     >
+      <!-- define assets and src to use -->
       <a-assets>
         <a-asset-item
           id="hammer"
@@ -43,11 +44,15 @@
           src="https://market-assets.fra1.cdn.digitaloceanspaces.com/market-assets/models/dogue/model.gltf"
         />
       </a-assets>
+
+      <!-- environment code -->
       <a-entity
         id="ground"
         environment="preset: arches; groundColor: pink; grid: cross; seed:3; fog:0.4;"
         position="0 -2 0"
       ></a-entity>
+
+      <!-- hand code -->
       <a-entity id="rig">
         <a-camera position="0 1.6 0"></a-camera>
         <a-entity
@@ -57,28 +62,30 @@
         ></a-entity>
         <a-entity
           id="blockHand"
-          oculus-touch-controls="hand: right;"
+          hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"
           oculus-thumbstick-controls
           laser-controls
         ></a-entity>
       </a-entity>
+
+      <!-- hammer code -->
       <a-entity
         gltf-model="#hammer"
         position="0 1 -2"
         rotation="1 5 15"
         animation="property: object3D.position.y; to: 1.2; dir: alternate; dur:2000; loop: true;"
       ></a-entity>
+
+      <!-- dog code -->
       <a-entity gltf-model="#dog" position="6 -2 -4" rotation="4 0 0">
-        <a-animation
-          attribute="rotation"
-          begin="click"
-          repeat="indefinite"
-          to="0 360 0"
-        ></a-animation>
-        <a-camera position="-3 2 5">
-          <a-cursor color="white" />
-        </a-camera>
       </a-entity>
+
+      <!-- Camera code -->
+      <a-camera position="3 0 3">
+        <a-cursor color="white" />
+      </a-camera>
+
+      <!-- Welcome code -->
       <a-entity
         text="value: Welcome to Karen's first Quest 2 app!; color: #BBB"
         position="5 3 -3"
