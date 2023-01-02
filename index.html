@@ -4,26 +4,6 @@
     <script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script>
     <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
     <script src="https://unpkg.com/aframe-teleport-controls@0.3.x/dist/aframe-teleport-controls.min.js"></script>
-    <script>
-      document
-        .querySelector("#blockHand")
-        .addEventListener("click", function (evt) {
-          let newVoxelEl = document.createElement("a-entity");
-          newVoxelEl.setAttribute("mixin", "voxel");
-
-          let normal = evt.detail.intersection.face.normal;
-          normal.multiplyScalar(0.25);
-
-          let position = evt.detail.intersection.point;
-          position.add(normal);
-
-          newVoxelEl.setAttribute("position", position);
-
-          this.appendChild(newVoxelEl);
-        });
-
-        let dog = document.querySelector('#dog');
-    </script>
   </head>
   <body>
     <a-scene
@@ -36,8 +16,10 @@
           src="https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/hammer/model.gltf"
         >
         </a-asset-item>
-        <a-asset-item id="dog"
-        src ="https://market-assets.fra1.cdn.digitaloceanspaces.com/market-assets/models/dogue/model.gltf"/>
+        <a-asset-item
+          id="dog"
+          src="https://market-assets.fra1.cdn.digitaloceanspaces.com/market-assets/models/dogue/model.gltf"
+        />
       </a-assets>
       <a-entity
         id="ground"
@@ -47,13 +29,13 @@
       <a-entity id="rig">
         <a-camera position="0 1.6 0"></a-camera>
         <a-entity
-          oculus-touch-controls="hand: left; handModelStyle: toon; color=blue"
+          hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"
           teleport-controls="type: parabolic; collisionEntities: [mixin='voxel'], #ground"
           intersection-spawn="event: click; mixin: voxel"
         ></a-entity>
         <a-entity
           id="blockHand"
-          oculus-touch-controls="hand: right; handModelStyle: toon;"
+          oculus-touch-controls="hand: right;"
           oculus-thumbstick-controls
           laser-controls
         ></a-entity>
@@ -64,7 +46,16 @@
         rotation="1 5 15"
         animation="property: object3D.position.y; to: 1.2; dir: alternate; dur:2000; loop: true;"
       ></a-entity>
-      <a-entity gltf-model="#dog" position="6 -2 -4" rotation="4 0 0"/>
+      <a-entity
+        gltf-model="#dog"
+        position="6 -2 -4"
+        rotation="4 0 0"
+      />
+      <a-entity
+        text="value: Welcome to Karen's first Quest 2 app!; color: #BBB"
+        position="-5 6 -3"
+        scale="10 10 10"
+      />
     </a-scene>
   </body>
 </html>
