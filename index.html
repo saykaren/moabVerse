@@ -6,6 +6,10 @@
     <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
     <script src="https://unpkg.com/aframe-teleport-controls@0.3.x/dist/aframe-teleport-controls.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.misc.min.js"></script>
+
+    <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
   </head>
   <body>
     <a-scene
@@ -43,16 +47,21 @@
         ></a-entity>
         <a-entity
           id="blockHand"
+          sphere-collider="objects: a-entity, a-box"
+          super-hands
           hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"
           oculus-thumbstick-controls
           laser-controls
-          raycaster="objects: .links; far: 5; lineOpacity: 0.5"
+          raycaster="objects: .links; far: 10; lineOpacity: 0.5"
           thumbstick-logging
         ></a-entity>
+
       </a-entity>
 
       <!-- hammer code -->
       <a-entity
+        grabbable
+        droppable
         gltf-model="#hammer"
         position="0 1 -2"
         rotation="1 5 15"
@@ -70,6 +79,10 @@
         scale="10 10 10"
         id="welcome"
       />
+      </a-entity>
+
+    <!-- hover & drag-drop won't have any obvious effect without some additional event handlers or components. See the examples page for more -->
+    <a-box hoverable grabbable stretchable draggable droppable color="blue" position="0 0 -1"></a-box>
     </a-scene>
   </body>
 </html>
