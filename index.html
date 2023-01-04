@@ -40,6 +40,7 @@
       <a-entity id="rig">
         <a-camera position="4 1.6 3"></a-camera>
         <a-entity
+          sphere-collider="objects: a-box"
           hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"
           teleport-controls="type: parabolic; collisionEntities: [mixin='voxel'], #ground"
           oculus-thumbstick-controls
@@ -47,8 +48,7 @@
         ></a-entity>
         <a-entity
           id="blockHand"
-          sphere-collider="objects: a-entity, a-box"
-          super-hands
+          sphere-collider="objects: a-box"
           hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"
           oculus-thumbstick-controls
           laser-controls
@@ -59,14 +59,14 @@
       </a-entity>
 
       <!-- hammer code -->
-      <a-entity
+      <a-box
         grabbable
         droppable
         gltf-model="#hammer"
         position="0 1 -2"
         rotation="1 5 15"
         animation="property: object3D.position.y; to: 1.2; dir: alternate; dur:2000; loop: true;"
-      ></a-entity>
+      ></a-box>
 
       <!-- dog code -->
       <a-entity gltf-model="#dog" position="6 -2 -4" rotation="4 0 0">
