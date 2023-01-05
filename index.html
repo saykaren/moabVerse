@@ -41,18 +41,16 @@
         <a-camera position="4 1.6 3"></a-camera>
         <a-entity
           sphere-collider="objects: a-box"
+          super-hands
           hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"
-          teleport-controls="type: parabolic; collisionEntities: [mixin='voxel'], #ground"
           oculus-thumbstick-controls
-          intersection-spawn="event: click; mixin: voxel"
         ></a-entity>
         <a-entity
           id="blockHand"
+          super-hands
           sphere-collider="objects: a-box"
           hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"
           oculus-thumbstick-controls
-          laser-controls
-          raycaster="objects: .links; far: 10; lineOpacity: 0.5"
           thumbstick-logging
         ></a-entity>
 
