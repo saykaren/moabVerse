@@ -16,6 +16,16 @@
       gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/v1/decoders/;
     meshoptDecoderPath: https://unpkg.com/meshoptimizer@0.16.0/meshopt_decoder.js;"
     >
+
+      <!-- Welcome code -->
+      <a-entity
+        text="value: Welcome to Karen's first Quest 2 app!; color: #3c1464"
+        position="5 3 -3"
+        scale="10 10 10"
+        id="welcome"
+      />
+      </a-entity>
+
       <!-- define assets and src to use -->
       <a-assets>
         <a-asset-item
@@ -32,7 +42,7 @@
       <!-- environment code -->
       <a-entity
         id="ground"
-        environment="preset: arches; groundColor: pink; grid: cross; seed:3; fog:0.4;"
+        environment="preset: forest; groundColor: #3c5804; grid: cross; seed:3; fog:0.4;"
         position="0 -2 0"
       ></a-entity>
 
@@ -70,17 +80,73 @@
       <a-entity gltf-model="#dog" position="6 -2 -4" rotation="4 0 0">
       </a-entity>
 
-      <!-- Welcome code -->
-      <a-entity
-        text="value: Welcome to Karen's first Quest 2 app!; color: #BBB"
-        position="5 3 -3"
+      <!-- Play code -->
+      <a-box
+        text="value: Play with the blocks!; color: #3c1464"
+        position="1 6 5"
         scale="10 10 10"
-        id="welcome"
+        id="instructions"
+        rotation="0 180 0"
       />
-      </a-entity>
+      </a-box>
 
-    <!-- hover & drag-drop won't have any obvious effect without some additional event handlers or components. See the examples page for more -->
-    <a-box hoverable grabbable stretchable draggable droppable color="blue" position="0 0 -1"></a-box>
+    <!-- Boxes to play with -->
+    <a-box  
+      grabbable 
+      stretchable  
+      droppable 
+      color="#652776" 
+      position="1 1 5"
+      rotation="0 45 0 "
+    ></a-box>
+
+    <a-box  
+    grabbable 
+    stretchable  
+    droppable 
+    color="#e8eaeb" 
+    position="0 1 5"
+    rotation="0 30 0"
+    ></a-box>
+
+    <a-box  
+    grabbable 
+    stretchable  
+    droppable 
+    color="#c385e4" 
+    position="-1 1 5"
+    rotation="0 0 0"
+    ></a-box>
+
+    <a-box  
+    grabbable 
+    stretchable  
+    droppable 
+    color="#3c5804" 
+    position="-0.5 2 5"
+    rotation="0 15 0"
+    ></a-box>
+
+    <a-box  
+    grabbable 
+    stretchable  
+    droppable 
+    color="#3c1464" 
+    position="0.5 2 5"
+    rotation="0 85 0"
+    ></a-box>
+
+    <a-box  
+    grabbable 
+    stretchable  
+    droppable 
+    color="#e8eaeb" 
+    position="0 3 5"
+    rotation="0 0 0"
+    ></a-box>
+
+    <!-- End of blocks -->
+
     </a-scene>
   </body>
 </html>
