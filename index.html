@@ -27,6 +27,13 @@
       />
       </a-entity>
 
+      <!-- environment code -->
+      <a-entity
+      id="ground"
+      environment="preset: japan; groundYScale: 3; groundColor: green; grid: cross; seed:3; fog:0.4;"
+      position="0 -2 0"
+    ></a-entity>
+
       <!-- define assets and src to use -->
       <a-assets>
         <a-asset-item
@@ -39,33 +46,6 @@
           src="https://market-assets.fra1.cdn.digitaloceanspaces.com/market-assets/models/dogue/model.gltf"
         />
       </a-assets>
-
-      <!-- environment code -->
-      <a-entity
-        id="ground"
-        environment="preset: forest; groundColor: #3c5804; grid: cross; seed:3; fog:0.4;"
-        position="0 -2 0"
-      ></a-entity>
-
-      <!-- hand code -->
-      <a-entity id="rig">
-        <a-camera position="4 1.6 3"></a-camera>
-        <a-entity
-          sphere-collider="objects: a-box"
-          super-hands
-          hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"
-          oculus-thumbstick-controls
-        ></a-entity>
-        <a-entity
-          id="blockHand"
-          super-hands
-          sphere-collider="objects: a-box"
-          hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"
-          oculus-thumbstick-controls
-          thumbstick-logging
-        ></a-entity>
-
-      </a-entity>
 
       <!-- hammer code -->
       <a-box
@@ -152,6 +132,26 @@
     ></a-box>
 
     <!-- End of blocks -->
+
+    <!-- hand code -->
+    <a-entity id="rig">
+      <a-camera position="4 1.6 3"></a-camera>
+      <a-entity
+        sphere-collider="objects: a-box"
+        super-hands
+        hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"
+        oculus-thumbstick-controls
+      ></a-entity>
+      <a-entity
+        id="blockHand"
+        super-hands
+        sphere-collider="objects: a-box"
+        hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"
+        oculus-thumbstick-controls
+        thumbstick-logging
+      ></a-entity>
+
+    </a-entity>
 
     </a-scene>
   </body>
