@@ -25,26 +25,42 @@
       </a-entity>
 
       <!-- environment code -->
+      <!-- https://github.com/supermedium/aframe-environment-component -->
+      <!-- tron, dream, volcano, forest, goldmine, poison, arches, osiris, egypt, checkerboard, threetowers, dream, starry -->
       <a-entity
       id="ground"
-      environment="preset: japan; groundYScale: 3; groundColor: green; grid: cross; seed:3; fog:0.4;"
+      environment="
+        preset: forest;
+        groundYScale: 3;
+        groundColor: green;
+        grid: cross;
+        seed: 3; 
+        fog: 0.9;
+        shadow: true;
+        shadowSize: 70;
+        lightPosition: 0 30 -0.2
+        "
       position="0 -2 0"
     ></a-entity>
 
       <!-- define assets and src to use -->
       <a-assets>
-        <a-asset-item
+        <!-- <a-asset-item
+        id="hammer"
+        src="https://clara.io/embed/1a03ac6b-d6b5-4c2d-9f1a-c80068311396?renderer=webgl"
+        > -->
+        <!-- <a-asset-item
           id="hammer"
           src="https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/hammer/model.gltf"
         >
-        </a-asset-item>
+        </a-asset-item> -->
         <!-- <a-asset-item
           id="dog"
           src="https://market-assets.fra1.cdn.digitaloceanspaces.com/market-assets/models/dogue/model.gltf"
         /> -->
-        <a-asset-item
+        <!-- <a-asset-item
           id="bookshelf"
-          src="https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/bookcase-wide/model.gltf"></a-asset-item>
+          src="https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/bookcase-wide/model.gltf"></a-asset-item> -->
       </a-assets>
       
 
@@ -53,7 +69,7 @@
         grabbable
         droppable
         gltf-model="#hammer"
-        position="0 1 -2"
+        position="0 1 10"
       ></a-box>
 
       <a-box
