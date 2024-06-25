@@ -12,10 +12,7 @@
     <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
   </head>
   <body>
-    <a-scene
-      gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/v1/decoders/;
-    meshoptDecoderPath: https://unpkg.com/meshoptimizer@0.16.0/meshopt_decoder.js;"
-    >
+    <a-scene>
 
       <!-- Welcome code -->
       <a-entity
@@ -41,11 +38,15 @@
           src="https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/hammer/model.gltf"
         >
         </a-asset-item>
-        <a-asset-item
+        <!-- <a-asset-item
           id="dog"
           src="https://market-assets.fra1.cdn.digitaloceanspaces.com/market-assets/models/dogue/model.gltf"
-        />
+        /> -->
+        <a-asset-item
+          id="bookshelf"
+          src="https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/bookcase-wide/model.gltf"></a-asset-item>
       </a-assets>
+      
 
       <!-- hammer code -->
       <a-box
@@ -54,6 +55,9 @@
         gltf-model="#hammer"
         position="0 1 -2"
       ></a-box>
+
+      <a-box
+        gltf-model="#bookshelf" position="5 0 -6"></a-box>
 
       <!-- dog code -->
       <a-box 
